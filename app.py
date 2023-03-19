@@ -5,7 +5,7 @@ import speech_recognition
 
 pygame.init()
 pygame.display.set_caption("Application Projet Arduino")
-pygame.display.set_icon(pygame.image.load('img/arduino.png'))
+pygame.display.set_icon(pygame.image.load('./arduino.png'))
 font = pygame.font.Font('freesansbold.ttf', 16)
 
 
@@ -21,11 +21,11 @@ class Application(ConnectHC06):
         self.screen = pygame.display.set_mode((self.width, self.height))
 
     def reset_speed(self):
-        self.one = pygame.image.load("img/one.png")
-        self.two = pygame.image.load("img/two.png")
-        self.three = pygame.image.load("img/three.png")
-        self.four = pygame.image.load("img/four.png")
-        self.five = pygame.image.load("img/five.png")
+        self.one = pygame.image.load("./one.png")
+        self.two = pygame.image.load("./two.png")
+        self.three = pygame.image.load("./three.png")
+        self.four = pygame.image.load("./four.png")
+        self.five = pygame.image.load("./five.png")
 
     def change_speed(self):
         if self.current_speed == 1:
@@ -40,40 +40,40 @@ class Application(ConnectHC06):
             self.five = self.colorize(self.five, (255, 0, 0))
 
     def load_images(self):
-        self.up = pygame.image.load("img/up.png")
+        self.up = pygame.image.load("./up.png")
         self.up_rect = self.up.get_rect(center=(150, 80))
 
-        self.down = pygame.image.load("img/down.png")
+        self.down = pygame.image.load("./down.png")
         self.down_rect = self.down.get_rect(center=(150, 220))
 
-        self.left = pygame.image.load("img/left.png")
+        self.left = pygame.image.load("./left.png")
         self.left_rect = self.left.get_rect(center=(80, 150))
 
-        self.right = pygame.image.load("img/right.png")
+        self.right = pygame.image.load("./right.png")
         self.right_rect = self.right.get_rect(center=(220, 150))
 
-        self.circle = pygame.image.load("img/circle.png")
+        self.circle = pygame.image.load("./circle.png")
         self.circle_rect = self.circle.get_rect(center=(150, 150))
 
-        self.voice = pygame.image.load("img/voice.png")
+        self.voice = pygame.image.load("./voice.png")
         self.voice_rect = self.voice.get_rect(center=(260, 40))
 
-        self.one = pygame.image.load("img/one.png")
+        self.one = pygame.image.load("./one.png")
         self.one_rect = self.one.get_rect(center=(45, 300))
 
-        self.two = pygame.image.load("img/two.png")
+        self.two = pygame.image.load("./two.png")
         self.two_rect = self.two.get_rect(center=(115, 300))
 
-        self.three = pygame.image.load("img/three.png")
+        self.three = pygame.image.load("./three.png")
         self.three_rect = self.three.get_rect(center=(185, 300))
 
-        self.four = pygame.image.load("img/four.png")
+        self.four = pygame.image.load("./four.png")
         self.four_rect = self.four.get_rect(center=(250, 300))
 
-        self.five = pygame.image.load("img/five.png")
+        self.five = pygame.image.load("./five.png")
         self.five_rect = self.five.get_rect(center=(315, 300))
 
-        self.blue = pygame.image.load("bluetooth.png")
+        self.blue = pygame.image.load("./bluetooth.png")
         self.blue_rect = self.five.get_rect(center=(310, 150))
 
     def colorize(self, image, newColor):
@@ -113,19 +113,19 @@ class Application(ConnectHC06):
 
     def handle_keyup(self, event):
         if event.key == pygame.K_UP:
-            self.up = pygame.image.load("img/up.png")
+            self.up = pygame.image.load("./up.png")
             app.send("a#")
         if event.key == pygame.K_DOWN:
-            self.down = pygame.image.load("img/down.png")
+            self.down = pygame.image.load("./down.png")
             app.send("b#")
         if event.key == pygame.K_LEFT:
-            self.left = pygame.image.load("img/left.png")
+            self.left = pygame.image.load("./left.png")
             app.send("g#")
         if event.key == pygame.K_RIGHT:
-            self.right = pygame.image.load("img/right.png")
+            self.right = pygame.image.load("./right.png")
             app.send("d#")
         if event.key == pygame.K_SPACE:
-            self.circle = pygame.image.load("img/circle.png")
+            self.circle = pygame.image.load("./circle.png")
             app.send("s#")
         if event.key == pygame.K_1:
             self.reset_speed()
